@@ -37,10 +37,10 @@ public class RandomTextGenerator {
     }
     
     public void printWordMap() {
-        String format = "%-25s%s%n";
+        String format = "%-30s%s%n";
         for (HashMap.Entry entry : wordMap.entrySet())
             System.out.printf(format, "Key: " + entry.getKey(), "Value: " + entry.getValue());
-        System.out.println("---------------------------------------------");
+        System.out.println("------------------------------------------------------");
     }
     
     public String generateText(int wordAmount) {
@@ -54,8 +54,9 @@ public class RandomTextGenerator {
         
         while (wordAmount-- > 0) {
             ArrayList<String> list = wordMap.get(set);
-            // Uncomment the line below for tracking every set of three words
-            // System.out.println("Set: " + set + ", follows: " + list);
+            // Uncomment the lines below for printing every set of three words
+            // String format = "%-30s%s%n";
+            // System.out.printf(format, "Set: " + set, "Follows: " + list);
             if (list == null || list.isEmpty())
                 break;
             n = rand.nextInt(list.size());
@@ -64,7 +65,7 @@ public class RandomTextGenerator {
             set = new WordSet(set.getWord2(), set.getWord3(), nextWord);
         }
         sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
-        System.out.println("Generated text: ");
+        System.out.println("------------------------------------------------------");
         return sb.toString().trim();
     }
 
@@ -74,6 +75,7 @@ public class RandomTextGenerator {
     public static void main(String[] args) {
         String text = "This is a text and this is a great damn text. This text is cool and this is a great freaking piece.";
         RandomTextGenerator gen = new RandomTextGenerator(text);
+        gen.printWordMap();
         System.out.println(gen.generateText(25));
     }
 }
