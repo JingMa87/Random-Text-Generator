@@ -11,6 +11,7 @@ to form a new text. This technique is called the Markov chain.
 
 This program is beginner-friendly and I would like to invite new programmers to start engaging in open source here.
 Here's a list of what still needs to be added:
+- A better test case in the main method of the SpeedEfficientGenerator class for testing the generated text.
 - A different implementation of the RandomTextGenerator class called the SpaceEfficientGenerator
 which doesn't use as much space, but sacrifices processor power instead
 - A file chooser in the main method where the user can open a .txt file to generate random text.
