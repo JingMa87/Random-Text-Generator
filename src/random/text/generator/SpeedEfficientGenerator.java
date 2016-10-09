@@ -75,8 +75,12 @@ public class SpeedEfficientGenerator extends RandomTextGenerator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        String text = "This is a text and this is a great damn text. This text is cool and this is a great freaking piece.";
-        SpeedEfficientGenerator gen = new SpeedEfficientGenerator(text);
+        String defaultTextLoremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                + "sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+                + "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+                + "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. "
+                + "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+        SpeedEfficientGenerator gen = new SpeedEfficientGenerator(defaultTextLoremIpsum);
         gen.printWordMap();
         System.out.println(gen.generateText(25));
     }
