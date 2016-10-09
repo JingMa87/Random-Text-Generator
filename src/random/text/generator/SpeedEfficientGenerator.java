@@ -5,10 +5,13 @@ import java.util.HashMap;
 import java.util.Random;
 
 /**
- * A program that takes in a text file and uses the words to randomly generate a new text.
- * This generator looks at sets of three consecutive words and remembers all the words
- * that follow the sets. Of all these follow-up words, one is chosen randomly
- * to form a new text. 
+ * This version of the RandomTextGenerator maps all the words following the WordSet
+ * into a HashMap to make the text generation faster. It does use more space to
+ * do this however.
+ * n = size of input text
+ * m = number of words to be generated
+ * The time complexity of this algorithm is O(n);
+ * The space complexity of this algorithm is O(n);
  */
 public class SpeedEfficientGenerator extends RandomTextGenerator {
     
