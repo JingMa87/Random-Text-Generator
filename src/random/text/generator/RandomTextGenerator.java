@@ -1,0 +1,79 @@
+package random.text.generator;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
+
+/**
+ * A program that takes in a text file and uses the words to randomly generate a new text.
+ * This generator looks at sets of three consecutive words and remembers all the words
+ * that follow the sets. Of all these follow-up words, one is chosen randomly
+ * to form a new text.
+ */
+public class RandomTextGenerator {
+    
+    private final String[] text;
+    private final HashMap<WordSet, ArrayList<String>> wordMap;
+    private final int SETSIZE = 3;
+    
+    public RandomTextGenerator(String text) {
+        this.text = text.split("\\s+");
+        wordMap = new HashMap<>();
+        makeWordMap();
+    }
+    
+    private void makeWordMap() {
+        for (int i = 0; i < text.length - SETSIZE; i++) {
+            WordSet set = new WordSet(text, i);
+            String nextWord = text[i + SETSIZE];
+            if (wordMap.containsKey(set))
+                wordMap.get(set).add(nextWord);
+            else {
+                ArrayList<String> list = new ArrayList<>();
+                list.add(nextWord);
+                wordMap.put(set, list);
+            }
+        }
+    }
+    
+    public void printWordMap() {
+        String format = "%-25s%s%n";
+        for (HashMap.Entry entry : wordMap.entrySet())
+            System.out.printf(format, "Key: " + entry.getKey(), "Value: " + entry.getValue());
+        System.out.println("---------------------------------------------");
+    }
+    
+    public String generateText(int wordAmount) {
+        if (wordAmount <= SETSIZE) return null;
+        
+        StringBuilder sb = new StringBuilder();
+        Random rand = new Random();
+        int n = rand.nextInt(text.length - SETSIZE);
+        WordSet set = new WordSet(text, n);
+        sb.append(set);
+        
+        while (wordAmount-- > 0) {
+            ArrayList<String> list = wordMap.get(set);
+            // Uncomment the line below for tracking every set of three words
+            // System.out.println("Set: " + set + ", follows: " + list);
+            if (list == null || list.isEmpty())
+                break;
+            n = rand.nextInt(list.size());
+            String nextWord = list.get(n);
+            sb.append(nextWord).append(" ");
+            set = new WordSet(set.getWord2(), set.getWord3(), nextWord);
+        }
+        sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
+        System.out.println("Generated text: ");
+        return sb.toString().trim();
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String text = "This is a text and this is a great damn text. This text is cool and this is a great freaking piece.";
+        RandomTextGenerator gen = new RandomTextGenerator(text);
+        System.out.println(gen.generateText(25));
+    }
+}
