@@ -2,7 +2,6 @@ package random.text.generator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 /**
  * This version of the RandomTextGenerator maps all the words following the WordSet
@@ -45,30 +44,8 @@ public class SpeedEfficientGenerator extends RandomTextGenerator {
     }
     
     @Override
-    public String generateText(int wordAmount) {
-        if (wordAmount <= SETSIZE) return null;
-        
-        StringBuilder sb = new StringBuilder();
-        Random rand = new Random();
-        int n = rand.nextInt(text.length - SETSIZE);
-        WordSet set = new WordSet(text, n);
-        sb.append(set);
-        
-        while (wordAmount-- > 0) {
-            ArrayList<String> list = wordMap.get(set);
-            // Uncomment the lines below for printing every set of three words
-            // String format = "%-30s%s%n";
-            // System.out.printf(format, "Set: " + set, "Follows: " + list);
-            if (list == null || list.isEmpty())
-                break;
-            n = rand.nextInt(list.size());
-            String nextWord = list.get(n);
-            sb.append(nextWord).append(" ");
-            set = new WordSet(set.getWord2(), set.getWord3(), nextWord);
-        }
-        sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
-        System.out.println("------------------------------------------------------");
-        return sb.toString().trim();
+    public ArrayList<String> getFollowingWords(WordSet set) {
+        return wordMap.get(set);
     }
 
     /**
@@ -77,7 +54,8 @@ public class SpeedEfficientGenerator extends RandomTextGenerator {
     public static void main(String[] args) {
         String text = "This is a text and this is a great damn text. This text is cool and this is a great freaking piece.";
         SpeedEfficientGenerator gen = new SpeedEfficientGenerator(text);
-        gen.printWordMap();
+        // Uncomment the line below to print all the WordSets and their following words
+        // gen.printWordMap();
         System.out.println(gen.generateText(25));
     }
 }

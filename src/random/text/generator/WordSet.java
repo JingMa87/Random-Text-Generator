@@ -3,7 +3,7 @@ package random.text.generator;
 /**
  * A set of three words for which we will find the words that follow after.
  */
-class WordSet {
+public class WordSet {
     
     private final String word1;
     private final String word2;
