@@ -1,5 +1,7 @@
 package random.text.generator;
 
+import java.util.Random;
+
 /**
  * This version of the RandomTextGenerator iterates through the input text on the
  * fly and creates an array of all the words following the specific set of words.
@@ -11,6 +13,16 @@ package random.text.generator;
  * The time complexity of this algorithm is O(n*m);
  * The space complexity of this algorithm is O(1);
  */
-public class SpaceEfficientGenerator {
+public class SpaceEfficientGenerator extends RandomTextGenerator {
     
+    public SpaceEfficientGenerator(String text) {
+        super(text);
+    }
+    
+    @Override
+    public String generateText(int wordAmount) {
+        Random rand = new Random();
+        int n = rand.nextInt(text.length - SETSIZE);
+        
+    }
 }

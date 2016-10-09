@@ -16,7 +16,6 @@ import java.util.Random;
 public class SpeedEfficientGenerator extends RandomTextGenerator {
     
     private final HashMap<WordSet, ArrayList<String>> wordMap;
-    private final int SETSIZE = 3;
     
     public SpeedEfficientGenerator(String text) {
         super(text);
@@ -45,6 +44,7 @@ public class SpeedEfficientGenerator extends RandomTextGenerator {
         System.out.println("------------------------------------------------------");
     }
     
+    @Override
     public String generateText(int wordAmount) {
         if (wordAmount <= SETSIZE) return null;
         

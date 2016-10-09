@@ -9,6 +9,7 @@ package random.text.generator;
 public abstract class RandomTextGenerator {
     
     public final String[] text;
+    public final int SETSIZE = 3;
     
     public RandomTextGenerator(String text) {
         this.text = text.split("\\s+");
