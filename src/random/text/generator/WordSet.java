@@ -1,7 +1,5 @@
 package random.text.generator;
 
-import java.util.Objects;
-
 /**
  * A set of three words for which we will find the words that follow after.
  */
@@ -46,6 +44,6 @@ class WordSet {
         if (!(obj instanceof WordSet)) return false;
         
         WordSet other = (WordSet) obj;
-        return this.getWord1().equals(other.getWord1()) || this.getWord2().equals(other.getWord2()) || this.getWord3().equals(other.getWord3());
+        return this.toString().equals(other.toString());
     }
 }
