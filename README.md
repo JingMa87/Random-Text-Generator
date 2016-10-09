@@ -1,6 +1,6 @@
 # README
 
-<img src="https://openclipart.org/image/2400px/svg_to_png/234131/Octocat-by-Rones.png" width="300">
+<img src="https://enterprise.github.com/assets/aws/jetpack-octocat-airlock-b4e1d022c0113c997328f6598d16e58ad049140e50da4859d6b4d174890bb1c8.jpg" width="300">
 
 A program that takes in a text file and uses the words to randomly generate a new text.
 This generator looks at sets of three consecutive words and remembers all the words
