@@ -15,7 +15,7 @@ Here's a list of what still needs to be added:
 - A different implementation of the RandomTextGenerator class called the SpaceEfficientGenerator
 which doesn't use as much space, but sacrifices processor power instead
 - A file chooser in the main method where the user can open a .txt file to generate random text.
-- A simple GUI with a text field to type in or copy in a big piece of text. 
+- A simple GUI with a text field to type in or copy in a big piece of text. The GUI has to be hand-coded and not drag-and-dropped!
 - A 'generate' button to generate text somewhere in the GUI.
 
 If you have ideas for a new feature, feel free to start an issue in the Issue Tracker and discuss the new feature with me.
