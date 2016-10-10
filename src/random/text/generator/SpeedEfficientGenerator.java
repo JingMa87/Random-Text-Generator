@@ -53,20 +53,20 @@ public class SpeedEfficientGenerator extends RandomTextGenerator {
      */
     public static void main(String[] args) {
         final String defaultText = "She is into superstitions, black cats and voodoo dolls. "
-                + "I feel a premonition that girl is gonna make me fall. "
-                + "She is into new sensations, new kicks in the candle light. "
-                + "She has got a new addiction for every day and night. "
-                + "She will make you take your clothes off and go dancing in the rain. "
-                + "She will make you live her crazy life but she will take away your pain like a bullet to your brain. "
-                + "Come On! Upside, inside out she is livin la vida loca. "
-                + "She will push and pull you down, livin la vida loca. "
-                + "Her lips are devil red and her skin is the color mocha. "
-                + "She will wear you out livin la vida loca. Come On! Livin la vida loca, Come on! "
-                + "She is livin la vida loca. Woke up in New York City in a funky cheap hotel. "
-                + "She took my heart and she took my money. She must have slipped me a sleeping pill. "
-                + "She never drinks the water and makes you order French Champagne. "
-                + "Once you have had a taste of her you will never be the same. "
-                + "Yeah, she will make you go insane.";
+            + "I feel a premonition that girl is gonna make me fall. "
+            + "She is into new sensations, new kicks in the candle light. "
+            + "She has got a new addiction for every day and night. "
+            + "She will make you take your clothes off and go dancing in the rain. "
+            + "She will make you live her crazy life but she will take away your pain like a bullet to your brain. "
+            + "Come On! Upside, inside out she is livin la vida loca. "
+            + "She will push and pull you down, livin la vida loca. "
+            + "Her lips are devil red and her skin is the color mocha. "
+            + "She will wear you out livin la vida loca. Come On! Livin la vida loca, Come on! "
+            + "She is livin la vida loca. Woke up in New York City in a funky cheap hotel. "
+            + "She took my heart and she took my money. She must have slipped me a sleeping pill. "
+            + "She never drinks the water and makes you order French Champagne. "
+            + "Once you have had a taste of her you will never be the same. "
+            + "Yeah, she will make you go insane.";
         SpeedEfficientGenerator gen = new SpeedEfficientGenerator(defaultText);
         // Uncomment the line below to print all the WordSets and their following words
         // gen.printWordMap();
