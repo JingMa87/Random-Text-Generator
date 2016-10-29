@@ -10,7 +10,7 @@ import java.util.Random;
  * to form a new text. This technique is called the Markov chain.
  */
 public abstract class RandomTextGenerator {
-    static final String defaultText = "She is into superstitions, black cats and voodoo dolls. "
+    protected static final String defaultText = "She is into superstitions, black cats and voodoo dolls. "
             + "I feel a premonition that girl is gonna make me fall. "
             + "She is into new sensations, new kicks in the candle light. "
             + "She has got a new addiction for every day and night. "
@@ -30,6 +30,10 @@ public abstract class RandomTextGenerator {
     
     public RandomTextGenerator(String text) {
         this.text = text.split("\\s+");
+    }
+    
+    public String getDefaultText(){
+        return defaultText;
     }
     
     public String generateText(int wordAmount) {
