@@ -32,10 +32,15 @@ public class Gui {
 		label.setAlignmentX(Component.CENTER_ALIGNMENT);
 		panel.add(label);
 		
-		JTextArea textField = new JTextArea(5, 5);
-		textField.setText("Not randomly generated text.");
-		textField.setAlignmentX(Component.CENTER_ALIGNMENT);
-		panel.add(textField);
+		JTextArea inputTextArea = new JTextArea(5, 5);
+		inputTextArea.setText(RandomTextGenerator.getDefaultText());
+		inputTextArea.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(inputTextArea);
+                
+                JTextArea outputTextArea = new JTextArea(5, 5);
+		outputTextArea.setText("Not randomly generated text.");
+		outputTextArea.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(outputTextArea);
 		
 		JButton generateTextButton = new JButton("Generate text");
 		generateTextButton.setAlignmentX(Component.CENTER_ALIGNMENT);
