@@ -32,7 +32,7 @@ public abstract class RandomTextGenerator {
         this.text = text.split("\\s+");
     }
     
-    public String getDefaultText(){
+    public static String getDefaultText(){
         return defaultText;
     }
     
