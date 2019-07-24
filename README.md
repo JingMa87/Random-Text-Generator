@@ -1,6 +1,6 @@
 # README
 
-<img src="https://cdn.dribbble.com/users/46/screenshots/281644/partyhard.png" width="600">
+<img src="https://cdn.dribbble.com/users/46/screenshots/281644/partyhard.png" width="400">
 
 A program that takes in a text file and uses the words to randomly generate a new text.
 This generator looks at sets of three consecutive words and remembers all the words
